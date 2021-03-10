@@ -5,6 +5,11 @@ class Book extends Model {}
 
 Book.init(
   {
+
+    book_id: {
+      type: DataTypes.UUIDV4,
+      primaryKey: true
+    },
     title: {
       type: DataTypes.STRING
     },

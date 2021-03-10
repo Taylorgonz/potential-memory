@@ -7,7 +7,7 @@ const sequelize = new Sequelize(
   // User
   'root',
   // Password
-  'myPassword',
+  'pass',
   {
     // Database location
     host: 'localhost',
