@@ -35,14 +35,14 @@ User.init(
     // When adding hooks via the init() method, they go below
     hooks: {
       // Use the beforeCreate hook to work with data before a new instance is created
-      beforeCreate: async (newUserData) => {
+      beforeCreate: (newUserData) => {
         // In this case, we are taking the user's email address, and making all letters lower case before adding it to the database.
-        newUserData.email = await newUserData.email.toLowerCase();
+        newUserData.email = newUserData.email.toLowerCase();
         return newUserData;
       },
       // Here, we use the beforeUpdate hook to make all of the characters lower case in an updated email address, before updating the database.
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.email = await updatedUserData.email.toLowerCase();
+      beforeUpdate: (updatedUserData) => {
+        updatedUserData.email = updatedUserData.email.toLowerCase();
         return updatedUserData;
       },
     },

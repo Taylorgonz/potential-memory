@@ -10,6 +10,13 @@ router.get('/', async (req, res) => {
   res.json(userData);
 });
 
+const myFunction = async (param) => {
+  const userData = await User.create(req.body);
+  return 1;
+
+}
+
+const myData = myFunction();
 // This route uses async/await with try/catch for errors
 // along with HTTP status codes
 router.post('/', async (req, res) => {

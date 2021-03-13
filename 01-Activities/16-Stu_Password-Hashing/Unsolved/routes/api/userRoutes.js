@@ -10,15 +10,17 @@ router.post('/login', async (req, res) => {
       res.status(404).json({ message: 'Login failed. Please try again!' });
       return;
     }
-
+    // comparing input password to associated to username
     const validPassword = await bcrypt.compare(
       req.body.password,
       userData.password
     );
+    // failed password match 
     if (!validPassword) {
       res.status(400).json({ message: 'Login failed. Please try again!' });
       return;
     }
+    // password pass
     res.status(200).json({ message: 'You are now logged in!' });
   } catch (err) {
     res.status(500).json(err);
